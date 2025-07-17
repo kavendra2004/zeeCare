@@ -23,10 +23,6 @@ const allowedOrigins = [
 
 app.use((req, res, next) => {
   const origin = req.headers.origin;
-  const allowedOrigins = [
-    "https://zee-care-mu.vercel.app",
-    process.env.ADMIN_URL || "http://localhost:5174"
-  ];
 
   if (allowedOrigins.includes(origin)) {
     res.header("Access-Control-Allow-Origin", origin);
