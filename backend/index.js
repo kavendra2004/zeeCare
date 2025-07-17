@@ -24,7 +24,7 @@ const allowedOrigins = [
 app.use((req, res, next) => {
   const origin = req.headers.origin;
   const allowedOrigins = [
-    process.env.FRONTEND_URL || "http://localhost:5173",
+    "https://zee-care-mu.vercel.app",
     process.env.ADMIN_URL || "http://localhost:5174"
   ];
 
