@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
 const Navbar = () => {
-    // eslint-disable-next-line no-unused-vars
+     
     const [show, setShow] = React.useState(false);
     const {isAuthenticated,setIsAuthenticated} = useContext(context)
     const navigateTo = useNavigate();
