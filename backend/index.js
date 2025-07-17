@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 5000;
 //middleware
 const allowedOrigins = [
   "https://zee-care-mu.vercel.app",
-  process.env.ADMIN_URL
+  "https://zee-care-eklv.vercel.app"
 ];
 
 app.use((req, res, next) => {
