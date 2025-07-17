@@ -7,9 +7,9 @@ export const generateJwtToken = (user, message, statusCode, res) => {
   res.setHeader("Access-Control-Allow-Credentials", "true");
 
   const options = {
-    httpOnly: true,                      // 🔐 Recommended for auth cookies
-    sameSite: "Lax",                     // ✅ Good default for local dev
-    secure: false,                       // ✅ Set to true only in production over HTTPS
+    httpOnly: true,
+    sameSite: "None",     // ✅ Required for cross-site cookies (Vercel → Render)
+    secure: true,                   // ✅ Set to true only in production over HTTPS
     expires: new Date(
       Date.now() + process.env.COOKIE_EXPIRES_TIME * 24 * 60 * 60 * 1000
     ),
