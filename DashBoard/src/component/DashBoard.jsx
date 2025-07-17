@@ -16,7 +16,7 @@ const DashBoard = () => {
     const fetchDoctors = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/v1/user/doctor/getAll",
+          "https://zeecare-backend-qg1w.onrender.com/api/v1/user/doctor/getAll",
           {
             withCredentials: true,
           }
@@ -36,7 +36,7 @@ const DashBoard = () => {
     const fetchAppointments = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/v1/appointment/getAll",
+          "https://zeecare-backend-qg1w.onrender.com/api/v1/appointment/getAll",
           {
             withCredentials: true,
           }
@@ -60,7 +60,7 @@ const DashBoard = () => {
   const handleUpdateStatus = async (appointmentId, newStatus) => {
     try {
       const { data } = await axios.put(
-        `http://localhost:4000/api/v1/appointment/update/${appointmentId}`,
+        `https://zeecare-backend-qg1w.onrender.com/api/v1/appointment/update/${appointmentId}`,
         { status: newStatus },
         { withCredentials: true }
       );

@@ -14,7 +14,7 @@ const Doctors = () => {
     const fetchDoctors = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/v1/user/doctor/getAll",
+          "https://zeecare-backend-qg1w.onrender.com/api/v1/user/doctor/getAll",
           {
             withCredentials: true,
           }

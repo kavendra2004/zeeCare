@@ -11,7 +11,7 @@ const Messages = () => {
   useEffect(() => {
     const fetchMessages = async () => {
       try {
-        const {data} = await axios.get("http://localhost:4000/api/v1/message/getAllMessages", {
+        const {data} = await axios.get("https://zeecare-backend-qg1w.onrender.com/api/v1/message/getAllMessages", {
           withCredentials: true,
         });
         console.log(data)

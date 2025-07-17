@@ -13,7 +13,7 @@ const Navbar = () => {
 
     const handleLogout = async() => {
     
-        await axios.post("http://localhost:4000/api/v1/user/patient/logout", {}, {withCredentials:true}).then((response)=>{
+        await axios.post("https://zeecare-backend-qg1w.onrender.com/api/v1/user/patient/logout", {}, {withCredentials:true}).then((response)=>{
             toast.success(response.data.message);
             setIsAuthenticated(false);
         }).catch((error)=>{

@@ -38,7 +38,7 @@ const AppointmentFrom = () => {
     const [doctors,setDoctors] = useState([]);
     useEffect(() => {
       const fetchDoctors = async() =>{
-        const {data} = await axios.get("http://localhost:4000/api/v1/user/doctor/getAll", {withCredentials:true})
+        const {data} = await axios.get("https://zeecare-backend-qg1w.onrender.com/api/v1/user/doctor/getAll", {withCredentials:true})
         setDoctors(data.doctors);
       }
     
@@ -50,7 +50,7 @@ const AppointmentFrom = () => {
         e.preventDefault();
         try {
             const hasVistedBool = Boolean(hasVisited);
-            const {data} = await axios.post("http://localhost:4000/api/v1/appointment/post",{
+            const {data} = await axios.post("https://zeecare-backend-qg1w.onrender.com/api/v1/appointment/post",{
                 firstName,
                 lastName,
                 email,

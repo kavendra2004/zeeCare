@@ -22,7 +22,7 @@ const AddNewAdmin = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/v1/user/addNewAdmin",
+        "https://zeecare-backend-qg1w.onrender.com/api/v1/user/addNewAdmin",
         { firstName, lastName, email, phone, NIC, DOB, gender, password },
         {
           withCredentials: true,

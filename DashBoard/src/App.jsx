@@ -21,7 +21,7 @@ const App = () => {
   useEffect(() => {
     const fetchUser = async() =>{
       try {
-        const response = await axios.get("http://localhost:4000/api/v1/user/admin/me", {withCredentials: true});
+        const response = await axios.get("https://zeecare-backend-qg1w.onrender.com/api/v1/user/admin/me", {withCredentials: true});
         setIsAuthenticated(true);
         setUser(response.data.data);
       // eslint-disable-next-line no-unused-vars

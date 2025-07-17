@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import './App.css'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import Home from './pages/home'
+import Home from './pages/Home'
 import AboutUs from './pages/AboutUs'
 import Appointment from './pages/Appointment'
 import Register from './pages/Register'
@@ -17,7 +17,7 @@ const App = () => {
   useEffect(() => {
     const fetchUser = async() =>{
       try {
-        const response = await axios.get("http://localhost:4000/api/v1/user/patient/me", {withCredentials: true});
+        const response = await axios.get("https://zeecare-backend-qg1w.onrender.com/api/v1/user/patient/me", {withCredentials: true});
         setIsAuthenticated(true);
         setUser(response.data.user);
       // eslint-disable-next-line no-unused-vars
