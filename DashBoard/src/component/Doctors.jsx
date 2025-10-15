@@ -25,9 +25,7 @@ const Doctors = () => {
       }
     };
 
-    return () => {
-      fetchDoctors();
-    };
+    fetchDoctors();
   }, [isAuthenticated]);
 
   if (!isAuthenticated) {
