@@ -20,6 +20,7 @@ const DashBoard = () => {
         { withCredentials: true }
       );
       setDoctors(data.doctors);
+      console.log("Fetched doctors:", data.doctors);
     } catch (error) {
       toast.error(error.response?.data?.message || "Failed to fetch doctors");
     }
