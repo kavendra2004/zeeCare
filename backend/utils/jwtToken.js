@@ -10,9 +10,8 @@ export const generateJwtToken = (user, message, statusCode, res) => {
     httpOnly: true,
     sameSite: "None",     // ✅ Required for cross-site cookies (Vercel → Render)
     secure: true,                   // ✅ Set to true only in production over HTTPS
-    expires: new Date(
-      Date.now() + process.env.COOKIE_EXPIRES_TIME * 24 * 60 * 60 * 1000
-    ),
+    path: "/", 
+    maxAge: 24 * 60 * 60 * 1000  // optional (1 day)
   };
 
   res
