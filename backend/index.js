@@ -17,8 +17,7 @@ const PORT = process.env.PORT || 5000;
 
 //middleware
 const allowedOrigins = [
-  "https://zee-care-mu.vercel.app",
-  "https://zee-care-eklv.vercel.app",
+  "https://zee-care-nu.vercel.app",
   "https://zee-care-1yzp.vercel.app"
 ];
 
