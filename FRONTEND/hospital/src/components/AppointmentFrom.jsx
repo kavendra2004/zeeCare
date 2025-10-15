@@ -42,9 +42,7 @@ const AppointmentFrom = () => {
         setDoctors(data.doctors);
       }
     
-      return () => {
-        fetchDoctors();
-      }
+      fetchDoctors();
     }, []);
     const handleAppointment = async (e) => {
         e.preventDefault();
