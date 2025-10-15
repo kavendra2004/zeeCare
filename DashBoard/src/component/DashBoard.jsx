@@ -13,49 +13,39 @@ const DashBoard = () => {
   const [doctors, setDoctors] = useState([]);
 
   useEffect(() => {
-    const fetchDoctors = async () => {
-      try {
-        const { data } = await axios.get(
-          "https://zeecare-backend-qg1w.onrender.com/api/v1/user/doctor/getAll",
-          {
-            withCredentials: true,
-          }
-        );
-        setDoctors(data.doctors);
-      } catch (error) {
-        toast.error(error.response.data.message || "Failed to fetch doctors");
-      }
-    };
+  const fetchDoctors = async () => {
+    try {
+      const { data } = await axios.get(
+        "https://zeecare-backend-qg1w.onrender.com/api/v1/user/doctor/getAll",
+        { withCredentials: true }
+      );
+      setDoctors(data.doctors);
+    } catch (error) {
+      toast.error(error.response?.data?.message || "Failed to fetch doctors");
+    }
+  };
 
-    return () => {
-      fetchDoctors();
-    };
-  }, [isAuthenticated]);
+  fetchDoctors(); // ✅ call directly
+}, [isAuthenticated]);
 
   useEffect(() => {
-    const fetchAppointments = async () => {
-      try {
-        const { data } = await axios.get(
-          "https://zeecare-backend-qg1w.onrender.com/api/v1/appointment/getAll",
-          {
-            withCredentials: true,
-          }
-        );
-        setAppointments(data.data);
-        console.log("Fetched appointments:", data.data);
-      } catch (error) {
-        setAppointments([]);
-        console.error("Error fetching appointments:", error);
-        toast.error(
-          error.response.data.message || "Failed to fetch appointments"
-        );
-      }
-    };
+  const fetchAppointments = async () => {
+    try {
+      const { data } = await axios.get(
+        "https://zeecare-backend-qg1w.onrender.com/api/v1/appointment/getAll",
+        { withCredentials: true }
+      );
+      setAppointments(data.data);
+      console.log("Fetched appointments:", data.data);
+    } catch (error) {
+      setAppointments([]);
+      console.error("Error fetching appointments:", error);
+      toast.error(error.response?.data?.message || "Failed to fetch appointments");
+    }
+  };
 
-    return () => {
-      fetchAppointments();
-    };
-  }, [isAuthenticated]);
+  fetchAppointments(); // ✅ call directly
+}, [isAuthenticated]);
 
   const handleUpdateStatus = async (appointmentId, newStatus) => {
     try {
